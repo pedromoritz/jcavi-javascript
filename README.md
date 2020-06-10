@@ -13,10 +13,10 @@ Lógica de Programação
 19:00h às 22:15h
 
 ### Conteúdo Programático:
-* Introdução ao JavaScript (03/06/2020)
-* Variáveis (03/06/2020)
-* Escopo (10/06/2020)
-* Funções (10/06/2020)
+* Introdução ao JavaScript (03/06)
+* Variáveis (03/06)
+* Escopo (10/06)
+* Funções (10/06)
 * Closures
 * Tipos
 * Tipagem dinâmica
@@ -30,4 +30,3 @@ Lógica de Programação
 * Ajax
 * DOM
 * Prototype
-
