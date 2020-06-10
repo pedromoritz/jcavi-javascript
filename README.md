@@ -9,11 +9,14 @@ Lógica de Programação
 ### Carga Horária:
 40 horas
 
+### Horário:
+19:00h às 22:15h
+
 ### Conteúdo Programático:
-* Introdução ao JavaScript
-* Variáveis
-* Escopo
-* Funções
+* Introdução ao JavaScript (03/06/2020)
+* Variáveis (03/06/2020)
+* Escopo (10/06/2020)
+* Funções (10/06/2020)
 * Closures
 * Tipos
 * Tipagem dinâmica
