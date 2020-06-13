@@ -1,0 +1,70 @@
+<script>
+
+/*
+Declare uma variável de nome "_variable", inicializada com o valor 1337.
+Esta variável deve ser declarada de maneira que não seja possível lhe 
+atribuir outro valor ou redeclarar a variável. Exiba o valor desta variável no
+console do browser.
+*/
+
+/*
+Corrija o código abaixo de maneira que seja exibido no console o
+retorno da função "buscaRespostaParaTudo". 
+*/
+
+let resposta = buscaRespostaParatudo();
+
+console.log(resposta);
+
+let buscaRespostaParaTudo = function() {
+   return 30 + 12;
+}
+
+/*
+Corrija o código abaixo de maneira que sejam exibidos no console
+os estados da região sul, listados no array "estadosRegiaoSul".
+*/
+
+let estadosRegiaoSul = ['Paraná', 'Santa Catarina', 'Rio Grande do Sul'];
+
+exibirItens(estadosRegiaoSul);
+
+let exibirItens = function(lista) {
+   for (var i = 0; i < lista.length; j++) {
+       let item = lista[j];
+       console.log(item);
+   }
+}
+
+/*
+Corrija a declaração das variáveis abaixo de maneira que sejam
+exibidos no console os seguintes valores, na seguinte ordem:
+
+3000
+1000
+
+*/
+
+var c3po = 1000;
+
+if (c3po > 999) {
+   var c3po = 3000;
+   console.log(c3po);
+}
+
+console.log(c3po);
+
+/*
+Corrija a função abaixo de maneira que o valor 'r2d2", declarado dentro
+da função, seja exibido no console.
+*/
+
+
+let getRobotName = function() {
+    let robotName = "r2d2";
+}
+
+let result = getRobotName();
+console.log(result);
+
+</script>
