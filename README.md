@@ -17,8 +17,8 @@ Lógica de Programação
 * Variáveis (03/06)
 * Escopo (10/06)
 * Funções (10/06)
-* Closures
-* Tipos
+* Closures (17/06)
+* Tipos (17/06)
 * Tipagem dinâmica
 * Operador typeof
 * Operadores aritméticos, lógicos e de comparação
