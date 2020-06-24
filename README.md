@@ -19,8 +19,8 @@ Lógica de Programação
 * Funções (10/06)
 * Closures (17/06)
 * Tipos (17/06)
-* Tipagem dinâmica
-* Operador typeof
+* Tipagem dinâmica (24/06)
+* Operador typeof (24/06)
 * Operadores aritméticos, lógicos e de comparação
 * Operador ternário
 * Arrays
