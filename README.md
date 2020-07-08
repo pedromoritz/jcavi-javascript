@@ -21,8 +21,8 @@ Lógica de Programação
 * Tipos (17/06)
 * Tipagem dinâmica (24/06)
 * Operador typeof (24/06)
-* Operadores aritméticos, lógicos e de comparação (01/07)
-* Operador ternário (01/07)
+* Operadores aritméticos, lógicos e de comparação (08/07)
+* Operador ternário (08/07)
 * Arrays
 * Objetos
 * Eventos
