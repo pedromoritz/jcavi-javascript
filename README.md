@@ -23,7 +23,7 @@ Lógica de Programação
 * Operador typeof (24/06)
 * Operadores aritméticos, lógicos e de comparação (08/07)
 * Operador ternário (08/07)
-* Arrays
+* Arrays (15/07)
 * Objetos
 * Eventos
 * Temporizadores
