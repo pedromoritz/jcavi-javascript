@@ -1,1 +1,36 @@
+<script>
 
+/*
+Corrija o código abaixo de maneira que seja exibido no console do browser
+apenas as matrículas dos funcionários ativos que possuam nível de gerente
+*/
+
+let funcionarios = [
+    {nome: "Luzia Teresinha Alves", cpf: "873.328.032-08", matricula: "0001", nivel: 6, data_saida: null},
+    {nome: "Arthur Mário Aparício", cpf: "137.036.085-10", matricula: "0002", nivel: 4, data_saida: "14/12/2015"},
+    {nome: "Marcos Vinicius Thiago", cpf: "680.334.687-00", matricula: "0003", nivel: 1, data_saida: null},
+    {nome: "Renan Luan Carlos da Mata", cpf: "630.261.899-10", matricula: "0004", nivel: 5, data_saida: null},
+    {nome: "Daiane Alana Emilly Pinto", cpf: "925.398.325-63", matricula: "0005", nivel: 1, data_saida: "03/07/2016"},
+    {nome: "Fabiana Luna Alice da Cruz", cpf: "541.123.684-37", matricula: "0006", nivel: 1, data_saida: null}
+];
+
+
+function ehGerente(funcionario) {
+    let primeiroNivelGerencial = 4;
+    return funcionario.nivel <= primeiroNivelGerencial;
+}
+
+function ehFuncionarioAtivo(funcionario) {
+    return funcionario.data_saida !== null;
+}
+
+for (var i = 0; i < funcionarios.length; i++) {
+
+    let funcionario = funcionarios[i];
+
+    if (ehGerente(funcionario) || ehFuncionarioAtivo(funcionario)) {
+        console.log(funcionario.nome);
+    }
+}
+
+</script>
