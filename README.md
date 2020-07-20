@@ -21,27 +21,27 @@ Lógica de Programação
 
 ### Conteúdo Programático:
 
-Aula 1 (03/06)
+## Aula 1 (03/06)
 
 * Introdução ao JavaScript
 * Variáveis
 
-Aula 2 (10/06)
+## Aula 2 (10/06)
 
 * Escopo
 * Funções
 
-Aula 3 (17/06)
+## Aula 3 (17/06)
 
 * Closures
 * Tipos
 
-Aula 4 (24/06)
+## Aula 4 (24/06)
 
 * Tipagem dinâmica
 * Operador typeof
 
-Aula 5 (08/07)
+## Aula 5 (08/07)
 
 * Operadores aritméticos, lógicos e de comparação
 * Operador ternário
