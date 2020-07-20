@@ -40,20 +40,20 @@ Aula 6 (15/07)
 Aula 7 (22/07)
 * Objetos
 
-Aula 8 (29/07)
+Aula 8
+* Elementos básicos do HTML
+* DOM (Document Object Model)
+
+Aula 9 (29/07)
 * Eventos
 
-Aula 9
+Aula 10
 * Temporizadores
 * Ajax
 * Prototype
 
-Aula 10
-* DOM
-
 Aula 11
-* DOM
-* Projeto prático
+* Revisão e Projeto prático
 
 Aula 12
-* Projeto prático
+* Revisão e Projeto prático
