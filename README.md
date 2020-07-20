@@ -21,10 +21,10 @@ Lógica de Programação
 
 ### Conteúdo Programático:
 
-## Aula 1 (03/06)
+## ~~Aula 1 (03/06)~
 
-* Introdução ao JavaScript
-* Variáveis
+* ~~Introdução ao JavaScript~~
+* ~~Variáveis~~
 
 ## Aula 2 (10/06)
 
@@ -59,7 +59,7 @@ Lógica de Programação
 * Elementos básicos do HTML
 * DOM (Document Object Model)
 
-## Aula 9 (29/07)
+## Aula 9
 
 * Eventos
 * Temporizadores
