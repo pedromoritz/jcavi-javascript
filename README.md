@@ -13,20 +13,47 @@ Lógica de Programação
 19:00h às 22:15h
 
 ### Conteúdo Programático:
-* Introdução ao JavaScript (03/06)
-* Variáveis (03/06)
-* Escopo (10/06)
-* Funções (10/06)
-* Closures (17/06)
-* Tipos (17/06)
-* Tipagem dinâmica (24/06)
-* Operador typeof (24/06)
-* Operadores aritméticos, lógicos e de comparação (08/07)
-* Operador ternário (08/07)
-* Arrays (15/07)
+
+Aula 1 (03/06)
+* Introdução ao JavaScript
+* Variáveis
+
+Aula 2 (10/06)
+* Escopo
+* Funções
+
+Aula 3 (17/06)
+* Closures
+* Tipos
+
+Aula 4 (24/06)
+* Tipagem dinâmica
+* Operador typeof
+
+Aula 5 (08/07)
+* Operadores aritméticos, lógicos e de comparação
+* Operador ternário
+
+Aula 6 (15/07)
+* Arrays
+
+Aula 7 (22/07)
 * Objetos
+
+Aula 8 (29/07)
 * Eventos
+
+Aula 9
 * Temporizadores
 * Ajax
-* DOM
 * Prototype
+
+Aula 10
+* DOM
+
+Aula 11
+* DOM
+* Projeto prático
+
+Aula 12
+* Projeto prático
