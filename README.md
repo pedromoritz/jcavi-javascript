@@ -46,33 +46,35 @@ Lógica de Programação
 * Operadores aritméticos, lógicos e de comparação
 * Operador ternário
 
-Aula 6 (15/07)
+## Aula 6 (15/07)
 
 * Arrays
 
-Aula 7 (22/07)
+## Aula 7 (22/07)
 
 * Objetos
 
-Aula 8
+## Aula 8
 
 * Elementos básicos do HTML
 * DOM (Document Object Model)
 
-Aula 9 (29/07)
+## Aula 9 (29/07)
 
 * Eventos
 * Temporizadores
 
-Aula 10
+## Aula 10
 
 * Ajax
 * Prototype
 
-Aula 11
+## Aula 11
 
 * Revisão e Projeto prático
 
-Aula 12
+## Aula 12
 
-* Revisão e Projeto prático
+* Projeto prático
+
+---
