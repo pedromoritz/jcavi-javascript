@@ -21,34 +21,34 @@ Lógica de Programação
 
 ### Conteúdo Programático:
 
-## ~~Aula 1 (03/06)~
+## ~~Aula 1 (03/06)~~
 
 * ~~Introdução ao JavaScript~~
 * ~~Variáveis~~
 
-## Aula 2 (10/06)
+## ~~Aula 2 (10/06)~~
 
-* Escopo
-* Funções
+* ~~Escopo~~
+* ~~Funções~~
 
-## Aula 3 (17/06)
+## ~~Aula 3 (17/06)~~
 
-* Closures
-* Tipos
+* ~~Closures~~
+* ~~Tipos~~
 
-## Aula 4 (24/06)
+## ~~Aula 4 (24/06)~~
 
-* Tipagem dinâmica
-* Operador typeof
+* ~~Tipagem dinâmica~~
+* ~~Operador typeof~~
 
-## Aula 5 (08/07)
+## ~~Aula 5 (08/07)~~
 
-* Operadores aritméticos, lógicos e de comparação
-* Operador ternário
+* ~~Operadores aritméticos, lógicos e de comparação~~
+* ~~Operador ternário~~
 
-## Aula 6 (15/07)
+## ~~Aula 6 (15/07)~~
 
-* Arrays
+* ~~Arrays~~
 
 ## Aula 7 (22/07)
 
