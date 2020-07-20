@@ -46,9 +46,9 @@ Aula 8
 
 Aula 9 (29/07)
 * Eventos
+* Temporizadores
 
 Aula 10
-* Temporizadores
 * Ajax
 * Prototype
 
