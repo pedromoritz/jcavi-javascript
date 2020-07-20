@@ -2,16 +2,16 @@
 ## [JCAVI Treinamentos](https://www.jcavitreinamentos.com.br)
 
 Este repositório armazena o material de apoio para o curso JavaScript da JCAVI Treinamentos.
-
+---
 ### Pré requisito:
 Lógica de Programação
-
+---
 ### Carga Horária:
 40 horas
-
+---
 ### Horário:
 19:00h às 22:15h
-
+---
 ### Conteúdo Programático:
 
 Aula 1 (03/06)
@@ -57,3 +57,4 @@ Aula 11
 
 Aula 12
 * Revisão e Projeto prático
+---
