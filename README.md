@@ -6,8 +6,12 @@ Este repositório armazena o material de apoio para o curso JavaScript da JCAVI 
 ### Pré requisito:
 Lógica de Programação
 
+---
+
 ### Carga Horária:
 40 horas
+
+---
 
 ### Horário:
 19:00h às 22:15h
