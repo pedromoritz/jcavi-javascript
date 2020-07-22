@@ -53,6 +53,7 @@ Lógica de Programação
 ## Aula 7 (22/07)
 
 * Objetos
+* Prototype
 
 ## Aula 8
 
@@ -62,12 +63,11 @@ Lógica de Programação
 ## Aula 9
 
 * Eventos
-* Temporizadores
 
 ## Aula 10
 
 * Ajax
-* Prototype
+* Temporizadores
 
 ## Aula 11
 
