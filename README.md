@@ -50,10 +50,10 @@ Lógica de Programação
 
 * ~~Arrays~~
 
-## Aula 7 (22/07)
+## ~~Aula 7 (22/07)~~
 
-* Objetos
-* Prototype
+* ~~Objetos~~
+* ~~Prototype~~
 
 ## Aula 8
 
