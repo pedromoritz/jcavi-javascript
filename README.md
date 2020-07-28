@@ -55,7 +55,7 @@ Lógica de Programação
 * ~~Objetos~~
 * ~~Prototype~~
 
-## Aula 8
+## Aula 8 (29/07)
 
 * Elementos básicos do HTML
 * DOM (Document Object Model)
