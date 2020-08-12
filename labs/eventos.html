@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+    <title>Eventos</title>
+</head>
+<body>
+
+<!--------------------------------------->
+<hr>
+
+Exemplo de captura de evento inline:
+<br><br>
+<input type="button" id="id_botao1" value="Botão 1" onclick="exibeAlert1();">
+<br>
+<!--------------------------------------->
+<hr>
+
+Exemplo de captura de evento com manipulador externo:
+<br><br>
+<input type="button" id="id_botao2" value="Botão 2">
+<br><br>
+
+<input type="button" id="id_botao_remove_listener" value="Remove Listener para a função exibeAlert1">
+<br>
+<!--------------------------------------->
+<hr>
+
+Exemplo de captura de diferentes eventos com manipulador externo:
+<br><br>
+<input type="text" id="id_campo1">
+<br><br>
+
+Eventos de alteracao: <span id="texto_eventos_alteracao"></span><br>
+Eventos do mouse: <span id="texto_eventos_mouse"></span><br>
+Eventos do teclado: <span id="texto_eventos_teclado"></span><br>
+Eventos do foco: <span id="texto_eventos_foco"></span><br><br>
+Tecla pressionada: <span id="texto_tecla_pressionada"></span><br><br>
+
+<input type="button" id="id_botao_limpa_mensagens" value="Limpa mensagens">
+<!--------------------------------------->
+<hr>
+Select:<br><br>
+<select id="estados_regiao_sul">
+    <option value="">Selecione um estado...</option>
+    <option value="PR">Paraná</option> 
+    <option value="SC">Santa Catarina</option>
+    <option value="RS">Rio Grande do Sul</option>
+</select>
+<br><br>
+
+Estado selecionado: <span id="texto_estado_selecionado"></span>
+<br>
+<!--------------------------------------->
+<hr>
+
+Input com tipo color:<br><br>
+<input type="color" id="id_color">
+<br><br>
+
+Cor selecionada: <span id="texto_cor_selecionada"></span>
+<!--------------------------------------->
+<hr>
+
+Input com tipo file:<br><br>
+<input type="file" id="id_file">
+<br><br>
+
+File name: <span id="texto_file_name"></span><br>
+Last modified: <span id="texto_last_modified"></span><br><br>
+Conteúdo do arquivo: <br>
+<textarea id="texto_file_conteudo" rows="10" cols="100" maxlength=”200”></textarea>
+<br><br>
+<!--------------------------------------->
+<hr>
+Capturando eventos da tela:<br><br>
+
+Altura da tela: <span id="texto_altura_tela"></span><br>
+Largura da tela: <span id="texto_largura_tela"></span>
+<!--------------------------------------->
+<hr>
+<script>
+
+/**/
+
+function exibeAlert1() {
+    alert("alerta 1");
+}
+
+function exibeAlert2() {
+    alert("alerta 2");
+}
+
+let botao2 = document.getElementById("id_botao2");
+
+//botao2.onclick = exibeAlert1;
+//botao2.onclick = exibeAlert2;
+
+botao2.addEventListener("click", exibeAlert1);
+botao2.addEventListener("click", exibeAlert2);
+
+function removeListener() {
+    botao2.removeEventListener("click", exibeAlert1);
+    alert("Listener para a função exibeAlert1 removido!");
+}
+
+let id_botao_remove_listener = document.getElementById("id_botao_remove_listener");
+id_botao_remove_listener.addEventListener("click", removeListener);
+
+/**/
+
+function exibeEventosAlteracao(event) {
+    let texto_eventos_alteracao = document.getElementById("texto_eventos_alteracao");
+    texto_eventos_alteracao.innerHTML = event.type;
+}
+
+function exibeEventosMouse(event) {
+    let texto_eventos_mouse = document.getElementById("texto_eventos_mouse");
+    texto_eventos_mouse.innerHTML = event.type;
+}
+
+function exibeEventosTeclado(event) {
+    let texto_eventos_teclado = document.getElementById("texto_eventos_teclado");
+    texto_eventos_teclado.innerHTML = event.type;
+}
+
+function exibeEventosFoco(event) {
+    let texto_eventos_foco = document.getElementById("texto_eventos_foco");
+    texto_eventos_foco.innerHTML = event.type;
+}
+
+function exibeTeclaPressionada(event) {
+    let texto_tecla_pressionada = document.getElementById("texto_tecla_pressionada");
+    texto_tecla_pressionada.innerHTML = event.key;
+}
+
+let campo1 = document.getElementById("id_campo1");
+
+campo1.addEventListener("change", exibeEventosAlteracao);
+
+campo1.addEventListener("mouseover", exibeEventosMouse);
+campo1.addEventListener("mouseout", exibeEventosMouse);
+
+campo1.addEventListener("keydown", exibeEventosTeclado);
+campo1.addEventListener("keyup", exibeEventosTeclado);
+
+campo1.addEventListener("focus", exibeEventosFoco);
+campo1.addEventListener("blur", exibeEventosFoco);
+
+campo1.addEventListener("keydown", exibeTeclaPressionada);
+
+function limpaMensagens() {
+    let texto_eventos_alteracao = document.getElementById("texto_eventos_alteracao");
+    texto_eventos_alteracao.innerHTML = "";
+
+    let texto_eventos_mouse = document.getElementById("texto_eventos_mouse");
+    texto_eventos_mouse.innerHTML = "";
+
+    let texto_eventos_teclado = document.getElementById("texto_eventos_teclado");
+    texto_eventos_teclado.innerHTML = "";
+
+    let texto_eventos_foco = document.getElementById("texto_eventos_foco");
+    texto_eventos_foco.innerHTML = "";
+
+    let texto_tecla_pressionada = document.getElementById("texto_tecla_pressionada");
+    texto_tecla_pressionada.innerHTML = "";
+}
+
+let botao_limpa_mensagens = document.getElementById("id_botao_limpa_mensagens");
+botao_limpa_mensagens.addEventListener("click", limpaMensagens);
+
+/**/
+
+function exibeEstadoSelecionado(event) {
+    let select_component = event.target;
+    let selected_option = select_component.selectedOptions[0];
+    let texto_estado_selecionado = document.getElementById("texto_estado_selecionado");
+    texto_estado_selecionado.innerHTML = selected_option.value;
+}
+
+let estados_regiao_sul = document.getElementById("estados_regiao_sul");
+estados_regiao_sul.addEventListener("change", exibeEstadoSelecionado);
+
+/**/
+
+function exibeCorSelecionada(event) {
+    let select_component = event.target;
+    let selected_color = select_component.value;
+    let texto_cor_selecionada = document.getElementById("texto_cor_selecionada");
+    texto_cor_selecionada.innerHTML = selected_color;
+    texto_cor_selecionada.style.backgroundColor = selected_color;
+}
+
+let id_color = document.getElementById("id_color");
+id_color.addEventListener("change", exibeCorSelecionada);
+
+/**/
+
+function exibeFileInfo(event) {
+    let input_component = event.target;
+    let file = input_component.files[0];
+
+    let texto_file_name = document.getElementById("texto_file_name");
+    texto_file_name.innerHTML = file.name;
+
+    let texto_last_modified = document.getElementById("texto_last_modified");
+    texto_last_modified.innerHTML = file.lastModified;
+
+    let reader = new FileReader();
+    reader.readAsText(file);
+
+    reader.onload = function() {
+        processaCSV(reader.result);
+    };
+}
+
+function processaCSV(csv) {
+    let linhas = csv.split(/\r\n|\n/);
+
+    let registros = linhas.map(function(item) {
+        return item.split(";");
+    })
+
+    console.log(registros);
+
+    let texto_file_conteudo = document.getElementById("texto_file_conteudo");
+    texto_file_conteudo.innerHTML = csv;
+}
+
+
+let id_file = document.getElementById("id_file");
+id_file.addEventListener("change", exibeFileInfo);
+
+/**/
+
+function exibeDimensoesTela() {
+    let texto_altura_tela = document.getElementById("texto_altura_tela");
+    texto_altura_tela.innerHTML = window.innerHeight;
+
+    let texto_largura_tela = document.getElementById("texto_largura_tela");
+    texto_largura_tela.innerHTML = window.innerWidth;
+}
+
+exibeDimensoesTela();
+
+window.addEventListener("resize", exibeDimensoesTela);
+
+</script>
+</body>
+</html>
