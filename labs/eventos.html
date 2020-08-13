@@ -12,7 +12,7 @@
 
 Exemplo de captura de evento inline:
 <br><br>
-<input type="button" id="id_botao1" value="Botão 1" onclick="exibeAlert1();">
+<input type="button" value="Botão 1" onclick="exibeAlert1();">
 <br>
 <!--------------------------------------->
 <hr>
@@ -71,6 +71,9 @@ File name: <span id="texto_file_name"></span><br>
 Last modified: <span id="texto_last_modified"></span><br><br>
 Conteúdo do arquivo: <br>
 <textarea id="texto_file_conteudo" rows="10" cols="100" maxlength=”200”></textarea>
+<br><br>
+
+<span id="tabela_itens"></span>
 <br><br>
 <!--------------------------------------->
 <hr>
@@ -219,15 +222,35 @@ function processaCSV(csv) {
     let linhas = csv.split(/\r\n|\n/);
 
     let registros = linhas.map(function(item) {
-        return item.split(";");
+        return item.split(",");
     })
 
-    console.log(registros);
+   let novosRegistros = registros.filter(function(item) {
+        return item.length > 1;
+    })
+
+    console.log(novosRegistros);
+
+    exibeTabela(novosRegistros);
 
     let texto_file_conteudo = document.getElementById("texto_file_conteudo");
     texto_file_conteudo.innerHTML = csv;
 }
 
+function exibeTabela(registros) {
+
+    let tabela = "<table border='1'>";
+    tabela += "<tr><td>Nome</td><td>CPF</td><td>Matricula</td></tr>";  
+
+    registros.forEach(function(item) {
+        tabela += `<tr><td>${item[0]}</td><td>${item[1]}</td><td>${item[2]}</td></tr>`;  
+    }) 
+
+    tabela += "</table>";
+
+    let tabela_itens = document.getElementById("tabela_itens");
+    tabela_itens.innerHTML = tabela;
+}
 
 let id_file = document.getElementById("id_file");
 id_file.addEventListener("change", exibeFileInfo);
