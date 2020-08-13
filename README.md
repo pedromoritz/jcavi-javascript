@@ -60,9 +60,9 @@ Lógica de Programação
 * ~~Elementos básicos do HTML~~
 * ~~DOM (Document Object Model)~~
 
-## Aula 9 (10/08)
+## ~~Aula 9 (10/08)~~
 
-* Eventos
+* ~~Eventos~~
 
 ## Aula 10
 
