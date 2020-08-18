@@ -60,11 +60,11 @@ Lógica de Programação
 * ~~Elementos básicos do HTML~~
 * ~~DOM (Document Object Model)~~
 
-## ~~Aula 9 (10/08)~~
+## ~~Aula 9 (12/08)~~
 
 * ~~Eventos~~
 
-## Aula 10
+## Aula 10 (19/08)
 
 * Ajax
 * Temporizadores
