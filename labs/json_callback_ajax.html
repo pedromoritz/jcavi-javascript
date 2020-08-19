@@ -10,7 +10,7 @@
 <!--------------------------------------->
 <hr>
 
-Exemplo: consultando municípios por UF
+Exemplo: consultando API do IBGE
 <br><br>
 <input type="button" id="botao_carregar_UFs" value="Carregar UFs">
 <input type="button" id="botao_limpar_dados" value="Limpar Dados">
@@ -30,10 +30,25 @@ UF:
         <td width="500"><b>Município</b></td>
     </tr>
 </table>
-<script>
+<br>
 
-let url_estados = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
-let url_municipios_por_uf = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF}/municipios";
+<hr>
+
+Exemplo: consultando API da NASA
+<br><br>
+<input type="date" id="input_date_apod">
+<br><br>
+<input type="button" id="botao_consultar_apod" value="Consultar APOD (Astronomy Picture of the Day)">
+<br><br>
+<span id="titulo_apod"></span>
+<br><br>
+<span id="explanation_apod"></span>
+<br><br>
+<img id="image_apod" style="width:400px;display:none">
+<embed id="video_apod" style="display:none"> 
+
+<hr>
+<script>
 
 /***********************************************************************/
 // carrega a lista de UFs no select
@@ -46,7 +61,9 @@ function carregarUFs() {
     let select_lista_UFs = document.getElementById('select_lista_UFs');
     limparDados();
 
-    executaAJAX(url_estados, function(resultado) {
+    let url_api = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
+
+    executaAJAX(url_api, function(resultado) {
 
         resultado.sort(function(a, b) {
             return a.nome > b.nome ? 1 : -1;
@@ -84,7 +101,9 @@ function consultarMunicipios() {
     } else {
         removeLinhasTabela('tabela_municipios');
         document.getElementById("mensagem_consulta").innerHTML = "Buscando municípios...";
-        let url = url_municipios_por_uf.replace("{UF}", selected_uf.value);
+        let url_api = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF}/municipios";
+
+        let url = url_api.replace("{UF}", selected_uf.value);
 
         executaAJAX(url, function(resultado) {
             document.getElementById("mensagem_consulta").innerHTML = `${resultado.length} municípios localizados na UF ${selected_uf.innerHTML}`;
@@ -114,6 +133,50 @@ function removeLinhasTabela(idTabela) {
 
     for(var i = tabela.rows.length - 1; i > 0; i--){
         tabela.deleteRow(i);
+    }
+}
+
+/***********************************************************************/
+// busca APOD (Astronomy Picture of the Day) da NASA
+// https://api.nasa.gov/planetary/apod?date=2019-12-31&api_key=3hsSk4m4XGDwxGWsmJAfLifylOKo9JZq2FTVPVgS
+
+let botao_consultar_apod = document.getElementById("botao_consultar_apod");
+botao_consultar_apod.addEventListener("click", carregarAPOD);
+
+function carregarAPOD() {
+
+    document.getElementById('titulo_apod').innerHTML = "";
+    document.getElementById('explanation_apod').innerHTML = "";
+    document.getElementById('image_apod').src = "";
+    document.getElementById('video_apod').src = "";
+    document.getElementById('image_apod').style.display = "none";
+    document.getElementById('video_apod').style.display = "none";
+
+    let input_date_apod = document.getElementById('input_date_apod');
+
+    if (input_date_apod.value == "") {
+        alert("Sem data selecionada!");
+    } else {
+        let url_api = "https://api.nasa.gov/planetary/apod?date={date}&api_key={key}";
+        let key = "3hsSk4m4XGDwxGWsmJAfLifylOKo9JZq2FTVPVgS";
+        let url = url_api.replace("{date}", input_date_apod.value).replace("{key}", key);
+
+        executaAJAX(url, function(resultado) {
+            document.getElementById('titulo_apod').innerHTML = resultado.title;
+            document.getElementById('explanation_apod').innerHTML = resultado.explanation;
+            document.getElementById('image_apod').src = resultado.url;
+
+            switch (resultado.media_type) {
+                case "image":
+                    document.getElementById('image_apod').src = resultado.url;
+                    document.getElementById('image_apod').style.display = "block";
+                break;
+                case "video":
+                    document.getElementById('video_apod').src = resultado.url;
+                    document.getElementById('video_apod').style.display = "block";
+                break;
+            }
+        }); 
     }
 }
 
