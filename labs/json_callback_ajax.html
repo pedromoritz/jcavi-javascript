@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+    <title>JSON & AJAX</title>
+</head>
+<body>
+
+<!--------------------------------------->
+<hr>
+
+Exemplo: consultando municípios por UF
+<br><br>
+<input type="button" id="botao_carregar_UFs" value="Carregar UFs">
+<input type="button" id="botao_limpar_dados" value="Limpar Dados">
+<br><br>
+UF: 
+<select id="select_lista_UFs">
+    <option value="">Selecione...</option>
+</select>
+<br><br>
+<input type="button" id="botao_consultar_municipios_por_UF" value="Consultar Municípios">
+<br><br>
+<span id="mensagem_consulta"></span>
+<br><br>
+<table border='1' id="tabela_municipios">
+    <tr>
+        <td width="200"><b>Código IBGE</b></td>
+        <td width="500"><b>Município</b></td>
+    </tr>
+</table>
+<script>
+
+let url_estados = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
+let url_municipios_por_uf = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF}/municipios";
+
+/***********************************************************************/
+// carrega a lista de UFs no select
+// https://servicodados.ibge.gov.br/api/v1/localidades/estados
+
+let botao_carregar_UFs = document.getElementById("botao_carregar_UFs");
+botao_carregar_UFs.addEventListener("click", carregarUFs);
+
+function carregarUFs() {
+    let select_lista_UFs = document.getElementById('select_lista_UFs');
+    limparDados();
+
+    executaAJAX(url_estados, function(resultado) {
+
+        resultado.sort(function(a, b) {
+            return a.nome > b.nome ? 1 : -1;
+        })
+
+        resultado.forEach(function(uf) {
+            select_lista_UFs.appendChild(new Option(uf.nome, uf.sigla));
+        })
+    });
+}
+
+/***********************************************************************/
+// limpa a lista de UFs do select e a tabela
+
+let botao_limpar_dados = document.getElementById("botao_limpar_dados");
+botao_limpar_dados.addEventListener("click", limparDados);
+
+function limparDados() {
+    document.getElementById('select_lista_UFs').innerHTML = '<option value="">Selecione...</option>';
+    document.getElementById("mensagem_consulta").innerHTML = "";
+    removeLinhasTabela('tabela_municipios');
+}
+
+/***********************************************************************/
+// exibe a lista de municípios para a UF selecionada
+
+let botao_consultar_municipios_por_UF = document.getElementById("botao_consultar_municipios_por_UF");
+botao_consultar_municipios_por_UF.addEventListener("click", consultarMunicipios);
+
+function consultarMunicipios() {
+    let selected_uf = document.getElementById('select_lista_UFs').selectedOptions[0];
+
+    if (selected_uf.value == "") {
+        alert("Sem UF selecionada!");
+    } else {
+        removeLinhasTabela('tabela_municipios');
+        document.getElementById("mensagem_consulta").innerHTML = "Buscando municípios...";
+        let url = url_municipios_por_uf.replace("{UF}", selected_uf.value);
+
+        executaAJAX(url, function(resultado) {
+            document.getElementById("mensagem_consulta").innerHTML = `${resultado.length} municípios localizados na UF ${selected_uf.innerHTML}`;
+
+            resultado.sort(function(a, b) {
+                return a.nome > b.nome ? 1 : -1;
+            })
+
+            let tabela_municipios = document.getElementById('tabela_municipios');
+
+            resultado.forEach(function(item) {
+                let nova_linha = tabela_municipios.insertRow();
+                let celula_codigo_ibge = nova_linha.insertCell();
+                var celula_municipio = nova_linha.insertCell();
+                celula_codigo_ibge.innerHTML = item.id;
+                celula_municipio.innerHTML = item.nome;
+            })
+        });
+    }
+}
+
+/***********************************************************************/
+// função que remove todas as linhas de uma tabela exceto a primeira
+
+function removeLinhasTabela(idTabela) {
+    let tabela = document.getElementById(idTabela);
+
+    for(var i = tabela.rows.length - 1; i > 0; i--){
+        tabela.deleteRow(i);
+    }
+}
+
+/***********************************************************************/
+// função que executa a chamada AJAX
+
+function executaAJAX(url, callback) {
+    let request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.setRequestHeader('Cache-Control', 'no-cache');
+    request.setRequestHeader("Content-Type", "application/json");
+
+    request.onload = function() {
+        if (this.status == 200) {
+            let resultadoObjetos = JSON.parse(this.response);
+            callback(resultadoObjetos);
+        } else {
+            // tratar o erro!!
+        }
+    };
+
+    request.onerror = function() {
+        // tratar o erro!!
+    };
+
+    request.send();
+}
+
+</script>
+</body>
+</html>
