@@ -66,8 +66,9 @@ Lógica de Programação
 
 ## Aula 10 (19/08)
 
-* Ajax
-* Temporizadores
+* JSON
+* Callback
+* AJAX
 
 ## Aula 11
 
