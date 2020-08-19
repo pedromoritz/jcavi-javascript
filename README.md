@@ -70,8 +70,10 @@ Lógica de Programação
 * Callback
 * AJAX
 
-## Aula 11
+## Aula 11 (26/08)
 
+* Temporizadores
+* Objeto Date
 * Revisão e Projeto prático
 
 ## Aula 12
