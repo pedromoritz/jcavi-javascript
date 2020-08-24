@@ -64,11 +64,11 @@ Lógica de Programação
 
 * ~~Eventos~~
 
-## Aula 10 (19/08)
+## ~~Aula 10 (19/08)~~
 
-* JSON
-* Callback
-* AJAX
+* ~~JSON~~
+* ~~Callback~~
+* ~~AJAX~~
 
 ## Aula 11 (26/08)
 
