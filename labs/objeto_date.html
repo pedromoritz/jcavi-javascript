@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+    <title>Objeto Date</title>
+</head>
+<body>
+
+<!--------------------------------------->
+<hr>
+
+Exemplo: usando o objeto Date()
+<br><br>
+
+.toString(): <span id="mensagem_date_1"></span>
+<br><br>
+
+.getTime(): <span id="mensagem_date_2"></span> (Unix timestamp, tempo transcorrido desde 01/01/1970 00:00:00, em milissegundos)
+<br><br>
+
+Date.parse("2012/10/04") (YYYY/MM/DD): <span id="mensagem_date_3"></span> -> <span id="mensagem_date_4"></span> 
+<br><br>
+
+Date.parse("04/12/1973") (MM/DD/YYYY): <span id="mensagem_date_5"></span> -> <span id="mensagem_date_6"></span> 
+<br><br>
+
+Date(): <span id="mensagem_date_7"></span>
+<br><br>
+
+.getYear(): <span id="mensagem_date_8"></span> (anos desde 1900)
+<br><br>
+
+.getFullYear(): <span id="mensagem_date_9"></span> (ano completo)
+<br><br>
+
+.getDate(): <span id="mensagem_date_10"></span> (dia)
+<br><br>
+
+.getMonth(): <span id="mensagem_date_11"></span> (mês, onde 0 é Janeiro e 11 é Dezembro)
+<br><br>
+
+.getDay(): <span id="mensagem_date_12"></span> (dia da semana, onde 0 é Domingo e 6 é Sábado)
+<br><br>
+
+.getHours(): <span id="mensagem_date_13"></span> (horas)
+<br><br>
+
+.getMinutes(): <span id="mensagem_date_14"></span> (minutos)
+<br><br>
+
+.getSeconds(): <span id="mensagem_date_15"></span> (segundos)
+<br><br>
+
+<script>
+
+/***********************************************************************/
+// usando setTimeout()
+
+let hoje = new Date();
+document.getElementById('mensagem_date_1').innerHTML = hoje.toString();
+document.getElementById('mensagem_date_2').innerHTML = hoje.getTime();
+
+let qualquer_data_1 = Date.parse("2012/10/04");
+document.getElementById('mensagem_date_3').innerHTML = qualquer_data_1;
+document.getElementById('mensagem_date_4').innerHTML = new Date(qualquer_data_1);
+
+let qualquer_data_2 = Date.parse("04/12/1973");
+document.getElementById('mensagem_date_5').innerHTML = qualquer_data_2;
+document.getElementById('mensagem_date_6').innerHTML = new Date(qualquer_data_2);
+
+document.getElementById('mensagem_date_7').innerHTML = Date();
+document.getElementById('mensagem_date_8').innerHTML = hoje.getYear();
+document.getElementById('mensagem_date_9').innerHTML = hoje.getFullYear();
+document.getElementById('mensagem_date_10').innerHTML = hoje.getDate();
+document.getElementById('mensagem_date_11').innerHTML = hoje.getMonth();
+document.getElementById('mensagem_date_12').innerHTML = hoje.getDay();
+document.getElementById('mensagem_date_13').innerHTML = hoje.getHours();
+document.getElementById('mensagem_date_14').innerHTML = hoje.getMinutes();
+document.getElementById('mensagem_date_15').innerHTML = hoje.getSeconds();
+
+</script>
+</body>
+</html>

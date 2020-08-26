@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+    <title>Temporizadores</title>
+</head>
+<body>
+
+<!--------------------------------------->
+<hr>
+
+Exemplo: usando setTimeout()
+<br><br>
+<input type="button" id="botao_inicia_timeout" value="Inicia Timeout (5 segundos)">
+<br><br>
+<input type="button" id="botao_cancela_timeout" value="Cancela Timeout">
+<br><br>
+<span id="mensagem_timeout">&nbsp;</span>
+
+<hr>
+
+Exemplo: usando setInterval()
+<br><br>
+<input type="button" id="botao_inicia_interval" value="Inicia Interval (2 segundos)">
+<br><br>
+<input type="button" id="botao_cancela_interval" value="Cancela Interval">
+<br><br>
+<span id="mensagem_interval">&nbsp;</span>
+
+<hr>
+
+<script>
+
+/***********************************************************************/
+// usando setTimeout()
+
+let botao_inicia_timeout = document.getElementById("botao_inicia_timeout");
+botao_inicia_timeout.addEventListener("click", iniciaTimeout);
+
+let timeout = null;
+
+function iniciaTimeout() {
+    let mensagem_timeout = document.getElementById("mensagem_timeout");
+    mensagem_timeout.innerHTML = "Iniciou timeout...";
+
+    timeout = setTimeout(function() {
+        mensagem_timeout.innerHTML = "Concluiu timeout!";
+    }, 5000);
+}
+
+let botao_cancela_timeout = document.getElementById("botao_cancela_timeout");
+botao_cancela_timeout.addEventListener("click", cancelaTimeout);
+
+function cancelaTimeout() {
+    mensagem_timeout.innerHTML = "&nbsp;";
+    clearTimeout(timeout);
+}
+
+/***********************************************************************/
+// usando setInterval()
+
+let botao_inicia_interval = document.getElementById("botao_inicia_interval");
+botao_inicia_interval.addEventListener("click", iniciaInterval);
+
+let interval = null;
+
+function iniciaInterval() {
+    let mensagem_interval = document.getElementById("mensagem_interval");
+    mensagem_interval.innerHTML = "Iniciou interval...";
+
+    interval = setInterval(function() {
+        mensagem_interval.innerHTML = mensagem_interval.innerHTML + "<br>" + "Concluiu interval!";
+    }, 2000);
+}
+
+let botao_cancela_interval = document.getElementById("botao_cancela_interval");
+botao_cancela_interval.addEventListener("click", cancelaInterval);
+
+function cancelaInterval() {
+    mensagem_interval.innerHTML = "&nbsp;";
+    clearInterval(interval);
+}
+
+</script>
+</body>
+</html>
