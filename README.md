@@ -70,13 +70,13 @@ Lógica de Programação
 * ~~Callback~~
 * ~~AJAX~~
 
-## Aula 11 (26/08)
+## ~~Aula 11 (26/08)~~
 
-* Temporizadores
-* Objeto Date
-* Revisão e Projeto prático
+* ~~Temporizadores~~
+* ~~Objeto Date~~
+* ~~Revisão e Projeto prático~~
 
-## Aula 12
+## Aula 12 (02/09)
 
 * Projeto prático
 
