@@ -76,8 +76,8 @@ Lógica de Programação
 * ~~Objeto Date~~
 * ~~Revisão e Projeto prático~~
 
-## Aula 12 (02/09)
+## ~~Aula 12 (02/09)~~
 
-* Projeto prático
+* ~~Projeto prático~~
 
 ---
